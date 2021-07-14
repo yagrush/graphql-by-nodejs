@@ -1,0 +1,14 @@
+overwrite: true
+schema: "http://localhost:4000"
+documents: "null"
+generates:
+  src/@types/types.d.ts:
+    plugins:
+      - "typescript"
+      - "typescript-operations" # fqueryやmutationで使用するOperationとかの型定義まで作ってくれる
+  ./graphql.schema.json:
+    plugins:
+      - "introspection"
+  ./schema.graphql: # これ以下を記述するとschema.graphqlをDocumentから作ってくれる（ｽｺﾞｲ）
+        plugins:
+            - schema-ast

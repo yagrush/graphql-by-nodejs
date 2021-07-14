@@ -1,0 +1,13 @@
+directive @cacheControl(maxAge: Int, scope: CacheControlScope) on FIELD_DEFINITION | OBJECT | INTERFACE
+
+enum CacheControlScope {
+  PUBLIC
+  PRIVATE
+}
+
+type Query {
+  helloWorld: String!
+}
+
+"""The `Upload` scalar type represents a file upload."""
+scalar Upload
